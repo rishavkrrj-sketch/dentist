@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dental Aesthetics — Since 1987 | New Delhi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #faf8f3;
+    --warm-white: #fffef9;
+    --gold: #c9a96e;
+    --gold-light: #e8d5b0;
+    --gold-dark: #9a7a45;
+    --teal: #2a7d6f;
+    --teal-light: #e8f4f2;
+    --teal-dark: #1a5a4f;
+    --charcoal: #1e1e1e;
+    --gray: #6b6b6b;
+    --light-gray: #f0ede8;
+    --border: rgba(201,169,110,0.25);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    background: var(--charcoal);
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12.5px;
+    color: var(--gold-light);
+    letter-spacing: 0.3px;
+  }
+  .topbar a { color: var(--gold); text-decoration: none; }
+  .topbar-right { display: flex; gap: 24px; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,254,249,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--charcoal);
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+  .logo span { color: var(--teal); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+
+  .nav-cta {
+    background: var(--teal);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--teal-dark) !important; color: white !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background: var(--cream);
+    padding: 80px 60px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--teal-light);
+    color: var(--teal-dark);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+    width: fit-content;
+  }
+  .hero-badge::before { content: '●'; font-size: 8px; }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1.1;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--teal);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 420px;
+    font-weight: 300;
+  }
+
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--teal);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
+
+  .btn-ghost {
+    border: 1px solid var(--gold);
+    color: var(--gold-dark);
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { background: var(--gold); color: white; }
+
+  .hero-stats {
+    display: flex;
+    gap: 36px;
+    margin-top: 52px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border);
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--teal);
+    display: block;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--gray);
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+    display: block;
+  }
+
+  .hero-right {
+    background: var(--teal-dark);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-right-inner {
+    position: relative;
+    z-index: 2;
+    padding: 60px 50px;
+    width: 100%;
+  }
+
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 300px; height: 300px;
+    background: rgba(201,169,110,0.12);
+    border-radius: 50%;
+  }
+  .hero-right::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 220px; height: 220px;
+    background: rgba(201,169,110,0.08);
+    border-radius: 50%;
+  }
+
+  .book-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,169,110,0.3);
+    border-radius: 8px;
+    padding: 36px;
+  }
+
+  .book-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: white;
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+  .book-card p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 28px;
+  }
+
+  .form-group { margin-bottom: 16px; }
+  .form-group label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .form-group select,
+  .form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(201,169,110,0.25);
+    border-radius: 4px;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+  .form-group select:focus,
+  .form-group input:focus { border-color: var(--gold); }
+  .form-group select option { background: var(--teal-dark); color: white; }
+  .form-group input::placeholder { color: rgba(255,255,255,0.3); }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .btn-book {
+    width: 100%;
+    background: var(--gold);
+    color: var(--charcoal);
+    border: none;
+    padding: 14px;
+    border-radius: 4px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-book:hover { background: var(--gold-dark); color: white; transform: translateY(-1px); }
+
+  .quote-strip {
+    background: var(--charcoal);
+    padding: 28px 80px;
+    text-align: center;
+  }
+  .quote-strip blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--gold-light);
+    font-weight: 400;
+  }
+
+  /* ── SERVICES ── */
+  section { padding: 90px 80px; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 14px;
+    line-height: 1.15;
+  }
+  .section-sub {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.7;
+    max-width: 520px;
+    font-weight: 300;
+    margin-bottom: 52px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .service-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 28px 24px;
+    transition: all 0.25s;
+    cursor: default;
+  }
+  .service-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(42,125,111,0.1);
+  }
+
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--teal-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    font-size: 20px;
+  }
+
+  .service-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+  }
+  .service-card p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ── WHY US ── */
+  .why-section {
+    background: var(--teal-dark);
+    color: white;
+  }
+  .why-section .section-label { color: var(--gold-light); }
+  .why-section .section-title { color: white; }
+  .why-section .section-sub { color: rgba(255,255,255,0.6); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .why-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,169,110,0.2);
+    border-radius: 6px;
+    padding: 28px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+  .why-card:hover { background: rgba(255,255,255,0.09); }
+
+  .why-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    min-width: 40px;
+  }
+
+  .why-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 6px;
+  }
+  .why-card p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ── TEAM ── */
+  .team-section { background: var(--light-gray); }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .team-card {
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+  }
+
+  .team-avatar {
+    height: 200px;
+    background: linear-gradient(135deg, var(--teal-light), var(--cream));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--teal);
+    letter-spacing: -1px;
+  }
+
+  .team-info { padding: 18px 20px; }
+  .team-info h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 4px;
+  }
+  .team-info p {
+    font-size: 12px;
+    color: var(--teal);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .testi-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 28px;
+  }
+
+  .stars { color: var(--gold); font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
+  .testi-card blockquote {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 18px;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+  }
+  .testi-author { font-size: 13px; font-weight: 600; color: var(--charcoal); }
+  .testi-location { font-size: 12px; color: var(--gray); }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    background: var(--charcoal);
+    padding: 90px 80px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .contact-section .section-label { color: var(--gold); }
+  .contact-section .section-title { color: white; }
+  .contact-section .section-sub { color: rgba(255,255,255,0.5); margin-bottom: 36px; }
+
+  .contact-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(201,169,110,0.12);
+    border: 1px solid rgba(201,169,110,0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+  .contact-item h4 { font-size: 12px; color: var(--gold-light); font-weight: 500; letter-spacing: 0.5px; margin-bottom: 2px; }
+  .contact-item p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+  .contact-item a { color: var(--gold); text-decoration: none; }
+
+  .hours-table { width: 100%; margin-top: 8px; }
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    font-size: 13px;
+  }
+  .hours-row:last-child { border-bottom: none; }
+  .hours-day { color: rgba(255,255,255,0.5); }
+  .hours-time { color: white; font-weight: 500; }
+  .hours-time.closed { color: rgba(255,100,100,0.7); }
+
+  .map-placeholder {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,169,110,0.2);
+    border-radius: 6px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 28px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .map-placeholder:hover { background: rgba(255,255,255,0.07); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #111;
+    padding: 40px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(201,169,110,0.15);
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+  }
+  .footer-logo span { color: var(--teal); }
+
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+  /* ── WHATSAPP FLOAT ── */
+  .wa-btn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    text-decoration: none;
+    z-index: 999;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .wa-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.5); }
+
+  /* ── SCROLL ANIMATION ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 500px; }
+    .hero-left { padding: 60px 32px; }
+    section { padding: 60px 32px; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .team-grid { grid-template-columns: 1fr 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .topbar { padding: 10px 24px; font-size: 11px; }
+    footer { padding: 32px; }
+    .hero-stats { gap: 20px; }
+    .contact-section { padding: 60px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span>📍 R-8, South Extension Part 2, New Delhi — 110049</span>
+  <div class="topbar-right">
+    <span>Mon–Fri: 9AM–6PM &nbsp;|&nbsp; Sat: 9AM–2PM</span>
+    <a href="tel:+918527717272">📞 +91-85277-17272</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Dental <span>Aesthetics</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why-us">Why Us</a></li>
+    <li><a href="#team">Our Team</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#book" class="nav-cta">Book Appointment</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home" style="padding:0;">
+  <div class="hero-left">
+    <div class="hero-badge">Since 1987 — Trusted by 10,000+ Patients</div>
+    <h1>Delhi's Premier<br><em>Smile Destination</em></h1>
+    <p class="hero-sub">Advanced dental care with a gentle touch. From smile design to implants — we bring together art, technology, and compassion.</p>
+    <div class="hero-btns">
+      <a href="#book" class="btn-primary">Book Appointment</a>
+      <a href="tel:+918527717272" class="btn-ghost">Call Us Now</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">37+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">10K+</span>
+        <span class="stat-label">Happy Patients</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">10</span>
+        <span class="stat-label">Specialist Doctors</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right" id="book">
+    <div class="hero-right-inner">
+      <div class="book-card">
+        <h2>Book Your Visit</h2>
+        <p>Select a doctor and preferred time — we'll confirm within 30 minutes</p>
+        <div class="form-group">
+          <label>Select Doctor</label>
+          <select>
+            <option value="">Choose your dentist</option>
+            <option>Dr. Sushant Umre</option>
+            <option>Dr. Amit Mehta</option>
+            <option>Dr. Apoorva Gupta</option>
+            <option>Dr. Aruna Awasthi</option>
+            <option>Dr. Gaurav Jain</option>
+            <option>Dr. Girija Tewari</option>
+            <option>Dr. Ishita Umre</option>
+            <option>Dr. Manreet Sidhu</option>
+            <option>Dr. Nikhil Grover</option>
+            <option>Dr. Rajnish Bhagirath</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="Full name">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+91 XXXXX XXXXX">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Preferred Date</label>
+            <input type="date">
+          </div>
+          <div class="form-group">
+            <label>Service</label>
+            <select>
+              <option value="">Select service</option>
+              <option>Smile Design</option>
+              <option>Dental Implant</option>
+              <option>Teeth Whitening</option>
+              <option>Root Canal</option>
+              <option>Braces / Invisalign</option>
+              <option>Routine Checkup</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn-book">Confirm Appointment →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-strip">
+  <blockquote>"We want to be the reason for someone else's smile today."</blockquote>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-label fade-up">What We Offer</div>
+  <h2 class="section-title fade-up">Comprehensive Dental <br>Specialities</h2>
+  <p class="section-sub fade-up">From preventive care to complex reconstructions — our multi-specialty team covers every aspect of your dental health.</p>
+
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="service-icon">😁</div>
+      <h3>Smile Design</h3>
+      <p>Full smile makeovers using veneers, whitening, and composite bonding.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">🦷</div>
+      <h3>Dental Implants</h3>
+      <p>Permanent tooth replacement that looks, feels, and functions like natural teeth.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">👶</div>
+      <h3>Pediatric Dentistry</h3>
+      <p>Gentle, child-friendly care from preventive to emergency treatment.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">🔬</div>
+      <h3>Laser Dentistry</h3>
+      <p>Painless, precise treatment using advanced dental laser technology.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">📐</div>
+      <h3>Invisalign</h3>
+      <p>Clear aligners for straightening teeth — invisible and removable.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">💊</div>
+      <h3>Sedation Dentistry</h3>
+      <p>Anxiety-free treatment with safe nitrous oxide sedation options.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">🏥</div>
+      <h3>Full Mouth Rehab</h3>
+      <p>Complete oral reconstruction combining multiple dental procedures.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">🌙</div>
+      <h3>Sleep Dentistry</h3>
+      <p>Treatment for snoring, sleep apnea, and airway-related dental issues.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section" id="why-us">
+  <div class="section-label fade-up">Why Dental Aesthetics</div>
+  <h2 class="section-title fade-up">Delhi's Most Trusted <br>Dental Clinic Since 1987</h2>
+  <p class="section-sub fade-up">Three decades of excellence, powered by the latest technology and a team that truly cares.</p>
+
+  <div class="why-grid">
+    <div class="why-card fade-up">
+      <div class="why-num">01</div>
+      <div>
+        <h3>37 Years of Trust</h3>
+        <p>Established in 1987, we've built a legacy of exceptional dental care across generations of Delhi families.</p>
+      </div>
+    </div>
+    <div class="why-card fade-up">
+      <div class="why-num">02</div>
+      <div>
+        <h3>10 Specialist Doctors</h3>
+        <p>A multidisciplinary team covering every dental specialty under one roof — so you never need a referral.</p>
+      </div>
+    </div>
+    <div class="why-card fade-up">
+      <div class="why-num">03</div>
+      <div>
+        <h3>Advanced Technology</h3>
+        <p>Digital scanners, dental lasers, OPG X-rays, and the Dental Wand for near-painless injections.</p>
+      </div>
+    </div>
+    <div class="why-card fade-up">
+      <div class="why-num">04</div>
+      <div>
+        <h3>Painless Experience</h3>
+        <p>From sedation options to hypnodontics — we make even anxious patients feel completely at ease.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section" id="team">
+  <div class="section-label fade-up">Meet the Experts</div>
+  <h2 class="section-title fade-up">Our Specialist Team</h2>
+  <p class="section-sub fade-up">Highly qualified, compassionate, and dedicated — each doctor brings years of specialized expertise.</p>
+
+  <div class="team-grid">
+    <div class="team-card fade-up">
+      <div class="team-avatar">SU</div>
+      <div class="team-info">
+        <h3>Dr. Sushant Umre</h3>
+        <p>Lead Dentist & Director</p>
+      </div>
+    </div>
+    <div class="team-card fade-up">
+      <div class="team-avatar">AM</div>
+      <div class="team-info">
+        <h3>Dr. Amit Mehta</h3>
+        <p>Implant Specialist</p>
+      </div>
+    </div>
+    <div class="team-card fade-up">
+      <div class="team-avatar">AG</div>
+      <div class="team-info">
+        <h3>Dr. Apoorva Gupta</h3>
+        <p>Smile Design Expert</p>
+      </div>
+    </div>
+    <div class="team-card fade-up">
+      <div class="team-avatar">AA</div>
+      <div class="team-info">
+        <h3>Dr. Aruna Awasthi</h3>
+        <p>Pediatric Dentist</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-label fade-up">Patient Stories</div>
+  <h2 class="section-title fade-up">What Our Patients Say</h2>
+  <p class="section-sub fade-up">Real experiences from real patients — their smiles say it all.</p>
+
+  <div class="testimonials-grid">
+    <div class="testi-card fade-up">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Dr. Umre transformed my smile completely. The Invisalign treatment was smooth and the results are beyond what I imagined. The clinic is world-class."</blockquote>
+      <div class="testi-author">Priya Sharma</div>
+      <div class="testi-location">Defence Colony, New Delhi</div>
+    </div>
+    <div class="testi-card fade-up">
+      <div class="stars">★★★★★</div>
+      <blockquote>"I was terrified of dentists but the sedation option made everything so easy. Got 2 implants done and felt absolutely no pain. Highly recommend Dental Aesthetics."</blockquote>
+      <div class="testi-author">Rahul Bhatia</div>
+      <div class="testi-location">Greater Kailash, New Delhi</div>
+    </div>
+    <div class="testi-card fade-up">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Brought my 6-year-old here after a dental emergency. Dr. Awasthi was incredibly gentle and patient. My daughter actually looks forward to her dental visits now!"</blockquote>
+      <div class="testi-author">Meera Kapoor</div>
+      <div class="testi-location">South Extension, New Delhi</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact" style="padding:90px 80px;">
+  <div class="contact-grid">
+    <div>
+      <div class="section-label fade-up">Find Us</div>
+      <h2 class="section-title fade-up">Visit Our Clinic</h2>
+      <p class="section-sub fade-up">Located in South Extension Part 2 — easily accessible from all parts of Delhi.</p>
+
+      <div class="contact-item fade-up">
+        <div class="contact-icon">📍</div>
+        <div>
+          <h4>Address</h4>
+          <p>R-8, Lower Ground Floor, South Extension Part 2,<br>New Delhi — 110049</p>
+        </div>
+      </div>
+      <div class="contact-item fade-up">
+        <div class="contact-icon">📞</div>
+        <div>
+          <h4>Phone</h4>
+          <p><a href="tel:+918527717272">+91-85277-17272</a> (Mrs. Anu)<br><a href="tel:+911126260399">+91-11-26260399</a></p>
+        </div>
+      </div>
+      <div class="contact-item fade-up">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <h4>Email</h4>
+          <p><a href="mailto:contact@dentalaesthetics.com">contact@dentalaesthetics.com</a></p>
+        </div>
+      </div>
+
+      <a href="https://www.google.com/maps/place/Dr.+Sushant+Umre+-+Dental+Aesthetics/@28.5630419,77.2212967" target="_blank" class="map-placeholder fade-up">
+        🗺️ &nbsp; View on Google Maps →
+      </a>
+    </div>
+
+    <div class="fade-up">
+      <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(201,169,110,0.2); border-radius:8px; padding:32px;">
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:22px; color:white; margin-bottom:6px; font-weight:400;">Working Hours</h3>
+        <p style="font-size:13px; color:rgba(255,255,255,0.4); margin-bottom:24px;">Plan your visit accordingly</p>
+        <div class="hours-table">
+          <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">9:00 AM – 6:00 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">9:00 AM – 6:00 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">9:00 AM – 6:00 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">9:00 AM – 6:00 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">9:00 AM – 6:00 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">9:00 AM – 2:00 PM</span></div>
+          <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time closed">Closed</span></div>
+        </div>
+
+        <div style="margin-top:28px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.07);">
+          <p style="font-size:13px; color:rgba(255,255,255,0.4); margin-bottom:14px;">Quick Contact</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a href="tel:+918527717272" class="btn-primary" style="font-size:13px; padding:11px 20px;">📞 Call Now</a>
+            <a href="https://api.whatsapp.com/send/?phone=918527717272" class="btn-ghost" style="font-size:13px; padding:11px 20px; border-color:rgba(201,169,110,0.4); color:#c9a96e;">💬 WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Dental <span>Aesthetics</span></div>
+  <div class="footer-links">
+    <a href="#">FAQ</a>
+    <a href="#">Testimonials</a>
+    <a href="#">Technology</a>
+    <a href="#">Book Appointment</a>
+  </div>
+  <div class="footer-copy">© 2025 Dental Aesthetics. Since 1987.</div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://api.whatsapp.com/send/?phone=918527717272&text=Hi" class="wa-btn" target="_blank" title="Chat on WhatsApp">💬</a>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
